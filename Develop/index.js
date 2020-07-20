@@ -38,21 +38,38 @@ function promptUser() {
             message: "Please write some tests for your application, and provide examples for how to run them"
         },
         {
+            name: "username",
+            message: "Enter your Github username"
+        },
+        {
+            name: "email",
+            message: "Enter the email best suited for contacting you"
+        },
+        {
             type: "input",
             name: "questions",
-            message: "Please describe any common questions the user might run across and provide answers for them"
+            message: "Your github profile and email are being provided as a way for the user to contact you. Please provide instructions on how to best reach you"
         },
+        {
+            type: "input",
+            name: "license",
+            message: "Which license do you want to use?",
+            choices: ["APM", "AUR", "Bower", "Cocoapods", "Conda", "CPAN", "CRAN/METACRAN", "Crates.io", "CTAN", "DUB", "Eclipse Marketplace", "GitHub", "Hex.pm", "NPM", "No License"]   
+        }
     ])
+    .then(function({ username }) {
+        const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+    })    
 } 
 
 // function to write README file
-function writeToFile(fileName, data) {
-}
+// function writeToFile(fileName, data) {
+// }
 
 // function to initialize program
-function init() {
+// function init() {
 
-}
-
+// }
+//promptUser();
 // function call to initialize program
-init();
+// init();
