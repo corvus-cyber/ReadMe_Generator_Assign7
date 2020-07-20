@@ -1,11 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const axios =require("axios");
+const axios = require("axios");
+const util = require("util");
 const writeToFile = util.promisify(fs.writeFile);
 
 // array of questions for user
-//const questions = [
-//];
 function promptUser() {
     inquirer.prompt([
         {
