@@ -57,9 +57,24 @@ function promptUser() {
             choices: ["APM", "AUR", "Bower", "Cocoapods", "Conda", "CPAN", "CRAN/METACRAN", "Crates.io", "CTAN", "DUB", "Eclipse Marketplace", "GitHub", "Hex.pm", "NPM", "No License"]   
         }
     ])
+    //This will be used to take the profile provided by the user and place their github link within: 
     .then(function({ username }) {
         const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
-    })    
+    
+        axios.get(queryUrl).then(function(res) {
+          const repoNames = res.data.map(function(repo) {
+            return repo.name;
+          });
+    
+          const repoNamesStr = repoNames.join("\n");
+    
+          fs.writeFile("repos.txt", repoNamesStr, function(err) {
+            if (err) {
+              throw err;
+            }
+          });
+        });
+    });  
 } 
 
 // function to write README file
