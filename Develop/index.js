@@ -1,12 +1,13 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const axios =require("axios");
 const writeToFile = util.promisify(fs.writeFile);
 
 // array of questions for user
 //const questions = [
 //];
 function promptUser() {
-    return inquirer.prompt([
+    inquirer.prompt([
         {
             type: "input",
             name: "title",
@@ -70,6 +71,6 @@ function promptUser() {
 // function init() {
 
 // }
-//promptUser();
+promptUser();
 // function call to initialize program
 // init();
