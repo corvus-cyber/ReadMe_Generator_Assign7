@@ -3,7 +3,7 @@ const fs = require("fs");
 const axios = require("axios");
 const util = require("util");
 const writeToFile = util.promisify(fs.writeFile);
-const README = require("./utils/generateMarkdown.js");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
 function promptUser() {
@@ -45,8 +45,9 @@ function promptUser() {
             message: "Please write some tests for your application, and provide examples for how to run them"
         },
         {
+            type: "input",
             name: "username",
-            message: "Enter your Github username"
+            message: "Enter your Github name"
         },
         {
             name: "email",
@@ -65,29 +66,29 @@ function promptUser() {
         }
     ])
     //This will be used to take the profile provided by the user and place their github link within: 
-    .then(function({ username }) {
-        const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
+    .then(function() {
+        // const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
     
-        axios.get(queryUrl).then(function(res) {
-          const repoNames = res.data.map(function(repo) {
-            return repo.name;
-          });
+        // axios.get(queryUrl).then(function(res) {
+        //   const repoNames = res.data.map(function(repo) {
+        //     return repo.name;
+        //   });
     
-          const repoNamesStr = repoNames.join("\n");
+        //   const repoNamesStr = repoNames.join("\n");
     
-          fs.writeFile("Project.md", README(response), function(error){
+          fs.writeFile("Project.md", generateMarkdown(response), function(error){
             if (error){
                 return console.log(error);
             }
         })
-        });
+
     });  
 } 
 
 // function to write README file
-function writeToFile(fileName, data) {
+// function writeToFile(fileName, data) {
 
-}
+// }
 
 // function to initialize program
 // function init() {

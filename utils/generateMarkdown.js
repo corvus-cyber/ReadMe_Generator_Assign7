@@ -14,13 +14,13 @@ function generateMarkdown(data) {
           * [Questions](#questions);
 
           ## License
-          ${data.inputlic}
+          ${data.inputlic};
 
           ## Installation
           ${data.installation};
           
           ## Usage
-          ${data.installation};
+          ${data.usage};
 
           ## Contributing
           ${data.contributing};
@@ -29,7 +29,7 @@ function generateMarkdown(data) {
           ${data.tests};
 
           ## Questions;
-          ${data.github};
+          github.com/${input.username};
           ${data.email};
           ${data.questions};
 
