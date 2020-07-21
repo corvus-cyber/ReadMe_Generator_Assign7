@@ -28,8 +28,8 @@ All usage of this project must follow in accordance with this license.
 ## Tests
 
 
-## Questions;
-github.com/
-
+## Questions:
+* Github Username: [corvus-cyber](https://github.com/corvus-cyber)
+* wyatta.hancock@gmail.com
 
 

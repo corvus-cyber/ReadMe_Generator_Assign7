@@ -7,7 +7,7 @@ function generateMarkdown(data) {
 ## Description
 ${data.description}
 
-## Table of Contents;
+## Table of Contents:
 * [License](#license)
 * [Installation](#installation)
 * [Usage](#usage)
@@ -31,12 +31,12 @@ ${data.guidelines}
 ## Tests
 ${data.tests}
 
-## Questions;
-github.com/${data.username}
-${data.email}
+## Questions:
+* Github Username: [${data.username}](https://github.com/${data.username})
+* ${data.email}
 ${data.questions}
 
 `;
-}
+} 
 
 module.exports = generateMarkdown;
