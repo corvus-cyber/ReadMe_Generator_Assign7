@@ -29,9 +29,15 @@ function promptUser() {
             message: "Please provide usage information for the project"
         },
         {
-            type: "input",
+            type: "confirm",
             name: "contributing",
-            message: "Do you wish for others to contribute to this project? If yes, please state so and add your guidelines. If no, state as such."
+            message: "Do you wish for others to contribute to this project?"
+        },
+        {
+            type: "input",
+            name: "guidelines",
+            when: (response) => response.contributing === true,
+            message:"please add your guidelines for how the user can contribute."
         },
         {
             type: "input",
@@ -52,7 +58,7 @@ function promptUser() {
             message: "Your github profile and email are being provided as a way for the user to contact you. Please provide instructions on how to best reach you"
         },
         {
-            type: "input",
+            type: "list",
             name: "license",
             message: "Which license do you want to use?",
             choices: ["APM", "AUR", "Bower", "Cocoapods", "Conda", "CPAN", "CRAN/METACRAN", "Crates.io", "CTAN", "DUB", "Eclipse Marketplace", "GitHub", "Hex.pm", "NPM", "No License"]   
@@ -69,22 +75,17 @@ function promptUser() {
     
           const repoNamesStr = repoNames.join("\n");
     
-          fs.writeFile("repos.txt", repoNamesStr, function(err) {
-            if (err) {
-              throw err;
+          fs.writeFile("Project.md", README(response), function(error){
+            if (error){
+                return console.log(error);
             }
-          });
+        })
         });
     });  
 } 
 
 // function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile("Project.md", README(response), function(error){
-        if (error){
-            return console.log(error);
-        }
-    })
 
 }
 
