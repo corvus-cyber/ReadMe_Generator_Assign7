@@ -32,9 +32,6 @@ function promptUser() {
             type: "confirm",
             name: "contributing",
             message: "Do you wish for others to contribute to this project?",
-            when: (response) => response.contributing === false,
-
-            
         },
         {
             when: (response) => response.contributing === true,
@@ -42,6 +39,12 @@ function promptUser() {
             name: "guidelines",
             message:"please add your guidelines for how the user can contribute.",
         },
+        {
+            when: (response) => response.contributing === false,
+            type: "input",
+            name: "guidelines",
+            message: "Please state your desire for not having any contributions and explain why."
+        },        
         {
             type: "input",
             name: "tests",
