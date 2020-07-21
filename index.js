@@ -66,7 +66,8 @@ function promptUser() {
         }
     ])
     //This will be used to take the profile provided by the user and place their github link within: 
-    .then(function() {
+    .then(function(response) {
+        console.log(response)
         // const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
     
         // axios.get(queryUrl).then(function(res) {
