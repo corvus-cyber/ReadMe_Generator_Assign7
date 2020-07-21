@@ -1,7 +1,8 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
+  const licenseEdit = data.license.replace(" ", "%20");
   return `# ${data.title}
-#${data.license}
+#  ![License: ${data.license}](https://img.shields.io/badge/License-${licenseEdit}-informational?style=for-the-badge&logo=appveyor.svg)
 
 ## Description
 ${data.description}
@@ -15,7 +16,8 @@ ${data.description}
 * [Questions](#questions);
 
 ## License
-${data.inputlic}
+This project is currently under the protection of the ${data.license} license. 
+All usage of this project must follow in accordance with this license.
 
 ## Installation
 ${data.installation}

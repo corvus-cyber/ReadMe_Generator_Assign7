@@ -68,7 +68,7 @@ function promptUser() {
             type: "list",
             name: "license",
             message: "Which license do you want to use?",
-            choices: ["APM", "AUR", "Bower", "Cocoapods", "Conda", "CPAN", "CRAN/METACRAN", "Crates.io", "CTAN", "DUB", "Eclipse Marketplace", "GitHub", "Hex.pm", "NPM", "No License"]   
+            choices: ["Apache 2.0", "GNU GPLv3", "MIT", "ISC", "GNU AGPLv3", "Mozilla Public 2.0", "The Unlicense", "No License"]   
         }
     ])
     //This will be used to take the profile provided by the user and place their github link within: 
