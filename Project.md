@@ -1,7 +1,8 @@
-# undefined;
+# Project;
+          #Hex.pm;
 
           ## Description
-          B;
+          how to build a readme;
 
           ## Table of Contents;
           * [License](#license)
@@ -15,13 +16,13 @@
           undefined;
 
           ## Installation
-          C;
+          by downloading it;
           
           ## Usage
-          D;
+          Usage information forthcoming;
 
           ## Contributing
-          false;
+          true;
 
           ## Tests
           testing 123;
@@ -29,5 +30,5 @@
           ## Questions;
           github.com/corvus-cyber;
           wyatta.hancock@gmail.com;
-          contact via those methods ;
+          contact via email between 9-5 ;
 
