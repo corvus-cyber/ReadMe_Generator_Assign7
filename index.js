@@ -3,6 +3,7 @@ const fs = require("fs");
 const axios = require("axios");
 const util = require("util");
 const writeToFile = util.promisify(fs.writeFile);
+const README = require("./utils/generateMarkdown.js");
 
 // array of questions for user
 function promptUser() {
@@ -78,8 +79,14 @@ function promptUser() {
 } 
 
 // function to write README file
-// function writeToFile(fileName, data) {
-// }
+function writeToFile(fileName, data) {
+    fs.writeFile("Project.md", README(response), function(error){
+        if (error){
+            return console.log(error);
+        }
+    })
+
+}
 
 // function to initialize program
 // function init() {
