@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require("axios");
 const util = require("util");
-const writeToFile = util.promisify(fs.writeFile);
+//const writeToFile = util.promisify(fs.writeFile);
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
@@ -32,66 +32,62 @@ function promptUser() {
             type: "confirm",
             name: "contributing",
             message: "Do you wish for others to contribute to this project?",
+            validate: catchEmpty
         },
         {
             when: (response) => response.contributing === true,
             type: "input",
             name: "guidelines",
             message:"please add your guidelines for how the user can contribute.",
+            validate: catchEmpty
         },
         {
             when: (response) => response.contributing === false,
             type: "input",
             name: "guidelines",
-            message: "Please state your desire for not having any contributions and explain why."
+            message: "Please state your desire for not having any contributions and explain why.",
+            validate: catchEmpty
         },        
         {
             type: "input",
             name: "tests",
-            message: "Please write some tests for your application, and provide examples for how to run them"
+            message: "Please write some tests for your application, and provide examples for how to run them",
+            validate: catchEmpty
         },
         {
             type: "input",
             name: "username",
-            message: "Enter your Github name"
+            message: "Enter your Github name",
+            validate: catchEmpty
         },
         {
             name: "email",
-            message: "Enter the email best suited for contacting you"
+            message: "Enter the email best suited for contacting you",
+            validate: catchEmpty
         },
         {
             type: "input",
             name: "questions",
-            message: "Your github profile and email are being provided as a way for the user to contact you. Please provide instructions on how to best reach you"
+            message: "Your github profile and email are being provided as a way for the user to contact you. Please provide instructions on how to best reach you",
+            validate: catchEmpty
         },
         {
             type: "list",
             name: "license",
             message: "Which license do you want to use?",
-            choices: ["Apache 2.0", "GNU GPLv3", "MIT", "ISC", "GNU AGPLv3", "Mozilla Public 2.0", "The Unlicense", "No License"]   
+            choices: ["Apache 2.0", "GNU GPLv3", "MIT", "ISC", "GNU AGPLv3", "Mozilla Public 2.0", "The Unlicense", "No License"],
+            validate: catchEmpty
         }
     ])
-    //This will be used to take the profile provided by the user and place their github link within: 
-    .then(function(response) {
-        console.log(response)
-        // const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
-    
-        // axios.get(queryUrl).then(function(res) {
-        //   const repoNames = res.data.map(function(repo) {
-        //     return repo.name;
-        //   });
-    
-        //   const repoNamesStr = repoNames.join("\n");
-    
-          fs.writeFile("Project.md", generateMarkdown(response), function(error){
-            if (error){
-                return console.log(error);
-            }
-        })
 
-    });  
+    
 } 
-
+function catchEmpty(value){
+    if(value=""){
+        return "Please enter required information."
+    } 
+    else return true;
+}
 // function to write README file
 // function writeToFile(fileName, data) {
 
@@ -101,6 +97,17 @@ function promptUser() {
 // function init() {
 
 // }
-promptUser();
+promptUser()
+    .then(function(response) {
+        console.log(response)
+
+        fs.writeFile("Project.md", generateMarkdown(response), function(error){
+            if (error){
+                return console.log(error);
+            }
+        }) 
+        
+    }); 
+ 
 // function call to initialize program
 // init();
