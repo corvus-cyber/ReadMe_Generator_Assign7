@@ -6,8 +6,8 @@ const util = require("util");
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
-async function promptUser() {
-    await inquirer.prompt([
+function promptUser() {
+    return inquirer.prompt([
         {
             type: "input",
             name: "title",
@@ -84,33 +84,32 @@ async function promptUser() {
         }
     ])    
 } 
-async function catchEmpty(value){
+
+//This function will check for empty values from the user's input; if empty it will ask the user to enter necesscary info.
+//This was inspired by fellow student Yakini Kani, who showed the class during office hours of tuesday july 22nd.
+//The method she was using was also to keep users from not entering values.
+function catchEmpty(value){
 
     if(value===""){
         return "Please enter required information."
     } 
     else return true;
+
 }
-// function to write README file
-// function writeToFile(fileName, data) {
 
-// }
 
-// function to initialize program
-// function init() {
-
-// }
 promptUser()
     .then(function(response) {
         console.log(response)
+        //Want to make it so that the user can double check and approve their responses.
 
         fs.writeFile("Project.md", generateMarkdown(response), function(error){
             if (error){
                 return console.log(error);
             }
-        }) 
-        
-    }); 
+        })    
+    });
+
  
 // function call to initialize program
 // init();

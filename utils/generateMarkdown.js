@@ -4,8 +4,6 @@ function generateMarkdown(data) {
   return `# ${data.title}
 #  ![License: ${data.license}](https://img.shields.io/badge/License-${licenseEdit}-informational?style=for-the-badge&logo=appveyor.svg)
 
-******Need to create a way to omit sections should the user not input their info into said section
-
 ## Description
 ${data.description}
 
