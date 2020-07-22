@@ -34,7 +34,7 @@ ${data.tests}
 ## Questions:
 * Github Username: [${data.username}](https://github.com/${data.username})
 * ${data.email}
-${data.questions}
+* ${data.questions}
 
 `;
 } 

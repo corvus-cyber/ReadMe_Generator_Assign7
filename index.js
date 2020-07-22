@@ -1,8 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const axios = require("axios");
-const util = require("util");
-//const writeAsyc = util.promisify(fs.writeFile);
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
@@ -86,7 +83,7 @@ function promptUser() {
 } 
 
 //This function will check for empty values from the user's input; if empty it will ask the user to enter necesscary info.
-//This was inspired by fellow student Yakini Kani, who showed the class during office hours of tuesday july 22nd.
+//This was inspired by fellow student Yakini Kani, who showed the class during her method during office hours of tuesday july 22nd.
 //The method she was using was also to keep users from not entering values.
 function catchEmpty(value){
 
@@ -101,73 +98,6 @@ function catchEmpty(value){
 promptUser()
     .then(function(response) {
         console.log(response);
-        //Want to make it so that the user can double check and approve their responses.
-        inquirer.prompt([
-            {
-                type: "confirm",
-                name: "editResponse",
-                message: "Do you want these responses: " + JSON.stringify(response) + " within your deployed readME?"
-            },
-            {
-                when: (response) => response.editResponse === false,
-                //need to loop back to previous questions
-            }
-            // {
-            //     when: (response) => response.editResponse === false,
-            //     type: "input",
-            //     name: "title",
-            //     message: "What is the desired title of your ReadMe?",
-            //     validate: catchEmpty
-            // },
-            // {
-            //     type: "confirm",
-            //     name: "editDescription",
-            //     message: "Do you want " + response.description + " as your description?"
-            // },
-            // {
-            //     when: (response) => response.editDescription === false,
-            //     type: "input",
-            //     name: "title",
-            //     message: "What is the desired description of your ReadMe?",
-            //     validate: catchEmpty
-            // },
-            // {
-            //     type: "confirm",
-            //     name: "editInstall",
-            //     message: "Do you want " + response.installation + " as your installation instructions?"
-            // },
-            // {
-            //     when: (response) => response.editInstall === false,
-            //     type: "input",
-            //     name: "title",
-            //     message: "Please tell the user how they can install your project?",
-            //     validate: catchEmpty
-            // },
-            // {
-            //     type: "confirm",
-            //     name: "editUsage",
-            //     message: "Do you want " + response.usage + " as your usage info?"
-            // },
-            // {
-            //     when: (response) => response.editUsage === false,
-            //     type: "input",
-            //     name: "title",
-            //     message: "Please provide usage information for the project",
-            //     validate: catchEmpty
-            // },
-            // {
-            //     type: "confirm",
-            //     name: "editTest",
-            //     message: "Do you want " + response.tests + " as your test info?"
-            // },
-            // {
-            //     when: (response) => response.editTest === false,
-            //     type: "input",
-            //     name: "title",
-            //     message: "Please provide usage information for the project",
-            //     validate: catchEmpty
-            // },
-        ])
         //Deploying the responses onto the pre-designed markdown
         fs.writeFile("Project.md", generateMarkdown(response), function(error){
             if (error){
@@ -177,5 +107,3 @@ promptUser()
     });
 
  
-// function call to initialize program
-// init();
