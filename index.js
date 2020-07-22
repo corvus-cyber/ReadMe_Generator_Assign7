@@ -2,31 +2,35 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const axios = require("axios");
 const util = require("util");
-//const writeToFile = util.promisify(fs.writeFile);
+//const writeAsyc = util.promisify(fs.writeFile);
 const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // array of questions for user
-function promptUser() {
-    inquirer.prompt([
+async function promptUser() {
+    await inquirer.prompt([
         {
             type: "input",
             name: "title",
-            message: "What is the desired title of your ReadMe?"
+            message: "What is the desired title of your ReadMe?",
+            validate: catchEmpty
         },
         {
             type: "input",
             name: "description",
-            message: "Please provide a description for your project"
+            message: "Please provide a description for your project",
+            validate: catchEmpty
         },
         {
             type: "input",
             name: "installation",
-            message: "Please tell the user how they can install your project"
+            message: "Please tell the user how they can install your project",
+            validate: catchEmpty
         },
         {
             type: "input",
             name: "usage",
-            message: "Please provide usage information for the project"
+            message: "Please provide usage information for the project",
+            validate: catchEmpty
         },
         {
             type: "confirm",
@@ -78,12 +82,11 @@ function promptUser() {
             choices: ["Apache 2.0", "GNU GPLv3", "MIT", "ISC", "GNU AGPLv3", "Mozilla Public 2.0", "The Unlicense", "No License"],
             validate: catchEmpty
         }
-    ])
-
-    
+    ])    
 } 
-function catchEmpty(value){
-    if(value=""){
+async function catchEmpty(value){
+
+    if(value===""){
         return "Please enter required information."
     } 
     else return true;
