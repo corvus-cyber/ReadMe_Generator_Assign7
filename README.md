@@ -35,6 +35,7 @@ The purpose of this assignment is to create a readme generator that will build a
 * How to write and edit files via fs 
 
 # Video Demo 
+![Video Gif of the Application](./screenshots/readmeDemo.gif)
 * If you wish to go back and see specific steps of the demo, feel free to click the link below and download the video demo
 * [Video Demo](https://drive.google.com/file/d/1PACj9ry5yPoZBYQ0SLAjmoVkK7SQglGO/view?usp=sharing)
 # Link
