@@ -1,8 +1,8 @@
-# Project
+# Project Test Run
 #  ![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-informational?style=for-the-badge&logo=appveyor.svg)
 
 ## Description
-this project will be incredible
+This project is a test to see how my readme generator application functions
 
 ## Table of Contents:
 * [License](#license)
@@ -17,19 +17,19 @@ This project is currently under the protection of the Apache 2.0 license.
 All usage of this project must follow in accordance with this license.
 
 ## Installation
-by going to github
+They can install the readme generator by going to my profile, finding the ReadMe generator repository, and cloning said repository
 
 ## Usage
-to use as much as possible
+This project is to be used only as a simple way to generate a professional Readme file
 
 ## Contributing
-We do not want any contributors at this time
+At this time I would ask that you do not attempt to contribute to this project
 
 ## Tests
-testing123
+The best test to run is by downloading the application, running npm install on your command line to ensure you get the necesscary files from inquirer npm, and then attempt to generate a readme by running node index.js
 
 ## Questions:
 * Github Username: [corvus-cyber](https://github.com/corvus-cyber)
 * wyatta.hancock@gmail.com
-you can reach me between 9-5 mst 
+* The best method to reach me is by email. I will do my best to respond within the next business day
 
