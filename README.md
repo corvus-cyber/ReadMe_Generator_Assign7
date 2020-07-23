@@ -1,20 +1,16 @@
 # ReadMe_Generator_Assign7
 
-# Description:
-This project takes node.js, javascript and inquirer npm and makes a ReadMe generator. The user will access it via the command line, fill out the required questions, and then they will be presented with a polished, professional Readme for their desired project. This readme will be listed as Project.md
-
 # Table of Contents:
-1. [Description](#Description)
-2. [Purpose](#Purpose)
-3. [Process](#Process)
-4. [Issues](#Issues)
-5. [What I Learned](#What)
-6. [Video](#Video)
-7. [Link](#Link)
-8. [Screenshot](#Screenshot)
+1. [Purpose](#Purpose)
+2. [Process](#Process)
+3. [Issues](#Issues)
+4. [What I Learned](#What)
+5. [Video](#Video)
+6. [Link](#Link)
+7. [Screenshot](#Screenshot)
 
 # Purpose
-The purpose of this assignment is to create a readme generator that will build a polished readme.md based off of the user's input. I built this project to apply my newfound knowledge in node.js, javascript, and in the usage of npms. 
+This project takes node.js, javascript and inquirer npm and makes a ReadMe generator. The user will access it via the command line, fill out the required questions, and then they will be presented with a polished, professional Readme for their desired project. This readme will be listed as Project.md. I built this project to apply my newfound knowledge in node.js, javascript, and in the usage of npms. 
 
 # Process
 * First I began by installing inquirer onto my application. 
