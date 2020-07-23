@@ -76,7 +76,7 @@ function promptUser() {
             type: "list",
             name: "license",
             message: "Which license do you want to use?",
-            choices: ["Apache 2.0", "GNU GPLv3", "MIT", "ISC", "GNU AGPLv3", "Mozilla Public 2.0", "The Unlicense",],
+            choices: ["Apache 2.0", "GNU GPLv3", "MIT", "ISC", "GNU AGPLv3", "MPL 2.0", "The Unlicense",],
             validate: catchEmpty
         }
     ])    
