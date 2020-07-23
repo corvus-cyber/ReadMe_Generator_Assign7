@@ -1,6 +1,8 @@
 # ReadMe_Generator_Assign7
 
-# Description
+# Description:
+
+# Table of Contents:
 1. [Description](#Description)
 2. [Purpose](#Purpose)
 3. [Process](#Process)
@@ -9,8 +11,6 @@
 6. [Video](#Video)
 7. [Link](#Link)
 8. [Screenshot](#Screenshot)
-
-# Table of Contents: 
 
 # Purpose
 

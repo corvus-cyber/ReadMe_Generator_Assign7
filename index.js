@@ -85,6 +85,7 @@ function promptUser() {
 //This function will check for empty values from the user's input; if empty it will ask the user to enter necesscary info.
 //This was inspired by fellow student Yakini Kani, who showed the class during her method during office hours of tuesday july 22nd.
 //The method she was using was also to keep users from not entering values.
+//I originally added async to both the catchEmpty function as well as the promptUser function, but this proved to be unnessecary. 
 function catchEmpty(value){
 
     if(value===""){
