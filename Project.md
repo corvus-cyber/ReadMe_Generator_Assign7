@@ -10,7 +10,7 @@ This project is a test to see how my readme generator application functions
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Tests](#tests)
-* [Questions](#questions);
+* [Questions](#questions)
 
 ## License
 This project is currently under the protection of the Apache 2.0 license. 
