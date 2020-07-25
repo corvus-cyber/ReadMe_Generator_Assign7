@@ -13,7 +13,7 @@ ${data.description}
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [Tests](#tests)
-* [Questions](#questions);
+* [Questions](#questions)
 
 ## License
 This project is currently under the protection of the ${data.license} license. 
